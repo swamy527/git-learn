@@ -5,7 +5,9 @@ pipeline {
            
         }
     }
-   
+    environment {
+        Greeting = 'Vachindroy...'
+    }
     stages {
         stage('Example') {
             steps {
@@ -20,6 +22,14 @@ pipeline {
          stage('third-stage') {
             steps {
                 echo 'Hello das World'
+            }
+        }
+        stage('third-stage') {
+            steps {
+                sh """
+                     echo "Here are the environment variables"
+                     env
+                """
             }
         }
     }
