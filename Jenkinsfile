@@ -24,7 +24,7 @@ pipeline {
                 echo 'Hello das World'
             }
         }
-        stage('third-stage') {
+        stage('Deploy') {
             steps {
                 sh """
                      echo "Here are the environment variables"
