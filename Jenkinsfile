@@ -7,6 +7,11 @@ pipeline {
     environment {
         Greeting = 'Vachindroy...'
     }
+
+    options {
+        // Timeout counter starts AFTER agent is allocated
+        timeout(time: 1, unit: 'SECONDS')
+    }
     stages {
         stage('Example') {
             steps {
@@ -27,7 +32,6 @@ pipeline {
             steps {
                 sh """
                      echo "Here are the environment variables"
-                     env
                 """
             }
         }
@@ -35,6 +39,9 @@ pipeline {
     post {
         success {
             echo 'I succeeded!'
+        }
+        failure {
+            echo 'I failed :('
         }
     }
 }
