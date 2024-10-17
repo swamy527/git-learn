@@ -33,7 +33,7 @@ pipeline {
         }
         stage('variables-pull') {
             steps {
-                echo 'Hello Borabanda'
+                echo 'Hello bonda'
             }
         }
          stage('second-stage') {
