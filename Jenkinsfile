@@ -32,6 +32,7 @@ pipeline {
             steps {
                 sh """
                      echo "Here are the environment variables"
+                     sleep 10
                 """
             }
         }
