@@ -1,8 +1,7 @@
 pipeline {
     agent {
         node {
-           label 'Agent-1'
-           
+           label 'Agent-1'   
         }
     }
     environment {
@@ -31,6 +30,11 @@ pipeline {
                      env
                 """
             }
+        }
+    }
+    post {
+        success {
+            echo 'I succeeded!'
         }
     }
 }
